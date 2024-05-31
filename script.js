@@ -8,10 +8,8 @@ async function checkAuthStatus() {
     const profileLink = document.getElementById('profileLink');
 
     if (user) {
-        // If the user is logged in, link to profileregistered.html
         profileLink.href = 'profileregistered.html';
     } else {
-        // If the user is not logged in, maintain the link to profileguest.html
         profileLink.href = 'profileguest.html';
     }
 }
@@ -32,9 +30,9 @@ async function next() {
             currentMonth = 0;
             currentYear++;
         }
-        document.getElementById('Date').textContent = `${months[currentMonth]} ${currentYear}`;
+        document.getElementById('Date').textContent = ${months[currentMonth]} ${currentYear};
     }
-    document.getElementById('Week-label').textContent = `Week ${currentWeek}`;
+    document.getElementById('Week-label').textContent = Week ${currentWeek};
     document.getElementById('next1').style.display = 'inline';
     loadTasks();
 }
@@ -48,9 +46,9 @@ async function back() {
             currentMonth = months.length - 1;
             currentYear--;
         }
-        document.getElementById('Date').textContent = `${months[currentMonth]} ${currentYear}`;
+        document.getElementById('Date').textContent = ${months[currentMonth]} ${currentYear};
     }
-    document.getElementById('Week-label').textContent = `Week ${currentWeek}`;
+    document.getElementById('Week-label').textContent = Week ${currentWeek};
     document.getElementById('next1').style.display = 'inline';
     loadTasks();
 }
@@ -68,8 +66,8 @@ function goToMonthYear() {
             currentYear = year;
             currentWeek = 1;
 
-            document.getElementById('Date').textContent = `${months[currentMonth]} ${currentYear}`;
-            document.getElementById('Week-label').textContent = `Week ${currentWeek}`;
+            document.getElementById('Date').textContent = ${months[currentMonth]} ${currentYear};
+            document.getElementById('Week-label').textContent = Week ${currentWeek};
             loadTasks();
         }
     }
@@ -79,11 +77,10 @@ async function loadTasks() {
     const taskContainer = document.getElementById('task-container');
     taskContainer.innerHTML = ''; // Clear previous tasks
 
-    const user = await connection.auth.user();
     const username = localStorage.getItem('username'); // Get username from localStorage
 
-    if (!user || !username) {
-        console.log('User is not logged in or username is not available.');
+    if (!username) {
+        console.log('Username is not available.');
         return;
     }
 
@@ -126,7 +123,7 @@ async function addNewTask(text = '', id = null, isSaved = false, status = 'Ongoi
 
         const statusText = document.createElement('span');
         statusText.classList.add('task-status');
-        statusText.textContent = ` Task ${status}`;
+        statusText.textContent =  Task ${status};
         statusText.style.color = status === 'Finished' ? 'green' : 'orange';
         
         task.appendChild(removeButton);
@@ -187,7 +184,7 @@ async function toggleTaskFinished(taskParagraph, taskId) {
     } else {
         const statusText = taskParagraph.nextElementSibling; // Selecting the next element
         if (statusText && statusText.classList.contains('task-status')) {
-            statusText.textContent = ` Task ${newStatus}`;
+            statusText.textContent =  Task ${newStatus};
             statusText.style.color = newStatus === 'Finished' ? 'green' : 'orange';
         } else {
             console.error('Status text element not found or not structured correctly.');
@@ -204,14 +201,13 @@ async function removeTask(taskId) {
     if (error) {
         console.error('Error removing task:', error);
     } else {
-        const taskToRemove = document.querySelector(`[data-task-id="${taskId}"]`);
+        const taskToRemove = document.querySelector([data-task-id="${taskId}"]);
         taskToRemove.remove();
         console.log('Task removed from database');
     }
 }
 
-window.onload = fetchData;
-loadTasks();
+window.onload = loadTasks;
 
 // Signup Script
 
@@ -244,18 +240,8 @@ async function buttonPressSignup() {
     if (error) {
         alert('Error during sign up: ' + error.message);
     } else {
-        const { data: authData, error: authError } = await connection.auth.signInWithPassword({
-            email: email,
-            password: passWord
-        });
-
-        if (authError) {
-            alert('Error during sign in: ' + authError.message);
-        } else {
-            localStorage.setItem('userSession', JSON.stringify(authData));
-            localStorage.setItem('username', name); // Store username in localStorage
-        }
-        window.location.href = 'homepage.html';
+        alert('Sign up successful! Please log in.');
+        window.location.href = 'login.html';
     }
 }
 
@@ -300,3 +286,12 @@ async function buttonPress() {
     // Redirect to homepage.html after successful login
     window.location.href = "homepage.html";
 }
+
+// Logout Script
+
+document.getElementById('profileLink').addEventListener('click', async () => {
+    await connection.auth.signOut();
+    localStorage.removeItem('userSession');
+    localStorage.removeItem('username');
+    window.location.href = 'profileguest.html'; // Redirect to guest profile page after logout
+});
