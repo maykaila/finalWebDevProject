@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timely Tasks</title>
+    <link rel="icon" href="logo/Timely Tasks (2)/icon with border big.png" type="image/icon type">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.29.1/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <a href="#"><img src="logo/Timely Tasks (2)/logo with bg big.png" alt="Logo"></a>      
+        <div id="usernameDisplay"></div>                          
+        <a id="profileLink" href="#"><img src="icons used/profile.png" alt="Profile"></a>
+    </div>
+
+    <div class="headerpt2">
+        <p id="Date">January 2024</p>
+    </div>
+
+    <div class="navigate">
+        <input type="text" id="monthInput" placeholder="Enter month (mm)" maxlength="2">
+        <input type="text" id="yearInput" placeholder="Enter year (yyyy)" maxlength="4">
+        <img src="icons used/search.png" alt="Go" onclick="goToMonthYear()">
+        <!-- <button onclick="goToMonthYear()">Go</button> -->
+    </div>
+
+    <!-- Weekly View -->
+    <div class="Week">
+        <div class="week1">
+            <div style="display: flex; align-items: center;">
+                <img src="icons used/left.png" alt="back" id="next1" onclick="back()">
+                <h3 id="Week-label">Week 1</h3>
+                <img src="icons used/right.png" alt="next" id="next2" onclick="next()">
+            </div>
+            <div id="task-container"></div>
+        </div>
+        <img src="icons used/add task ver 2.png" alt="addTask" id="addTaskBtn" onclick="addNewTask()">
+        <!-- <button id="addTaskBtn" onclick="addNewTask()">Create Task</button> -->
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

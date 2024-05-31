@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #494949;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #57278d;
+    padding: 10px 20px;
+}
+
+.header img {
+    height: 50px;
+}
+
+/* Date Display */
+.headerpt2 {
+    text-align: center;
+    background-color: #7139b3;
+    color: #f4f4f4;
+    padding: 10px 0;
+}
+
+#Date {
+    font-size: 1.5em;
+}
+
+/* Navigation Styles */
+.navigate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #7139b3;
+}
+
+.navigate input[type="text"] {
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+
+.navigate img {
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Weekly View Styles */
+.Week {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #494949;
+    padding: 20px 0;
+}
+
+.week1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.week1 div {
+    display: flex;
+    align-items: center;
+}
+
+.week1 img {
+    height: 30px;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+#Week-label {
+    font-size: 1.5em;
+}
+
+/* Task Container */
+#task-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.task-container {
+    display: flex;
+    align-items: center;
+    background-color: #6b6b6b;
+    border: 1px solid #6b6b6b;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.task-container p.task {
+    flex: 1;
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.task-container input.task {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+
+.save-btn {
+    padding: 5px 10px;
+    background-color: #7139b3;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-btn {
+    background-color: red;
+    color: #f4f4f4;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(0, 0, 0);
+}
+
+.task-status {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.task-finished {
+    color: #7139b3;
+}
+
+.task-ongoing {
+    color: orange;
+}
+
+/* Add Task Button */
+#addTaskBtn {
+    height: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}

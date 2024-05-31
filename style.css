@@ -1,0 +1,155 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: 494949;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    height: 50px;
+    width: 50px;
+}
+
+/* Profile Guest Styles */
+.profileGuest {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.profileGuest img {
+    height: auto;
+    width: 100px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.profileGuest p {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.profileGuest a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #7139b3; /* Dark Purple */
+}
+
+.profileGuest a:hover {
+    text-decoration: underline;
+}
+
+/* Additional Styles for Login and Popup */
+.forgetpass,
+.changepass,
+.popup,
+.login,
+.signup {
+    background-color: #ededed;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin: 20px auto; /* Centering these divs */
+}
+
+.forgetpass img,
+.popup img,
+.login img,
+.signup img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.username input,
+.changepass input,
+.logUsername,
+.password,
+.signup input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.username button,
+.changepass button,
+button,
+.signup button {
+    background-color: #7139b3; /* Dark Purple */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.username button:hover,
+.changepass button:hover,
+button:hover,
+.signup button:hover {
+    background-color: #7139b3; /* Darker Purple */
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: #494949;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.popup img {
+    cursor: pointer;
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+}
+
+.popuptext {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333; /* Dark Gray */
+}
+
+.popuptext a,
+.login p a,
+.signup p a {
+    color: #7139b3; /* Dark Purple */
+    text-decoration: none;
+}
+
+.popuptext a:hover,
+.login p a:hover,
+.signup p a:hover {
+    text-decoration: underline;
+}
